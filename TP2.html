@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thryve Protocol | Tokenizing Private Equity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #161413;
+            background: #EBE9E3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Header */
+        header {
+            background: #063B29;
+            padding: 30px 0;
+            border-bottom: 3px solid #AE9250;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #AE9250;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #063B29 0%, #215278 100%);
+            color: #EBE9E3;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+        
+        .hero .subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            color: #92B0C8;
+        }
+        
+        .hero .tagline {
+            font-size: 18px;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #063B29;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            color: #215278;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+        
+        /* What We Do */
+        .what-we-do {
+            background: #ffffff;
+        }
+        
+        .value-prop {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+        
+        .value-item {
+            padding: 32px;
+            background: #EBE9E3;
+            border-left: 4px solid #AE9250;
+        }
+        
+        .value-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #063B29;
+            margin-bottom: 16px;
+        }
+        
+        .value-item p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #161413;
+        }
+        
+        /* Why Now */
+        .why-now {
+            background: #063B29;
+            color: #EBE9E3;
+        }
+        
+        .why-now .section-title {
+            color: #AE9250;
+        }
+        
+        .why-now .section-subtitle {
+            color: #92B0C8;
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .pillar {
+            text-align: center;
+            padding: 32px 24px;
+            background: rgba(174, 146, 80, 0.1);
+            border-radius: 8px;
+        }
+        
+        .pillar h3 {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #AE9250;
+            margin-bottom: 16px;
+        }
+        
+        .pillar p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #92B0C8;
+        }
+        
+        /* Team */
+        .team {
+            background: #ffffff;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 48px;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 32px 24px;
+            background: #EBE9E3;
+            border-top: 3px solid #AE9250;
+        }
+        
+        .team-member h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #063B29;
+            margin-bottom: 8px;
+        }
+        
+        .team-member .role {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #215278;
+            margin-bottom: 16px;
+        }
+        
+        .team-member p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #161413;
+        }
+        
+        /* Investment Opportunity */
+        .investment {
+            background: #215278;
+            color: #EBE9E3;
+            text-align: center;
+        }
+        
+        .investment .section-title {
+            color: #AE9250;
+        }
+        
+        .investment p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #92B0C8;
+        }
+        
+        /* Footer */
+        footer {
+            background: #161413;
+            color: #92B0C8;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-links {
+            margin-top: 16px;
+        }
+        
+        .footer-links a {
+            color: #AE9250;
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: #92B0C8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero .subtitle {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .container {
+                padding: 0 24px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Thryve Protocol</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Tokenizing Private Equity</h1>
+            <p class="subtitle">Strategic Acquisition Platform with Blockchain-Enabled Profit Sharing</p>
+            <p class="tagline">Combining proven private equity fundamentals with innovative token economics to create sustainable value for businesses, customers, and investors.</p>
+        </div>
+    </section>
+
+    <section class="what-we-do">
+        <div class="container">
+            <h2 class="section-title">Our Approach</h2>
+            <p class="section-subtitle">Thryve acquires profitable businesses using traditional private equity methods, then converts a portion of profits into token buybacks distributed as customer rewards—creating alignment between all stakeholders.</p>
+            
+            <div class="value-prop">
+                <div class="value-item">
+                    <h3>Proven Fundamentals</h3>
+                    <p>We target established businesses with $5-10M EBITDA, 20%+ margins, and strong unit economics. Every acquisition must stand on its own financial merits before token integration.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h3>Strategic Integration</h3>
+                    <p>Blockchain enables a unique profit-sharing model impossible in traditional structures. Customer participation reinforces business economics rather than fighting against them.</p>
+                </div>
+                
+                <div class="value-item">
+                    <h3>Network Economics</h3>
+                    <p>Each acquisition strengthens the entire portfolio through cross-brand benefits, shared customer base, and compounding network effects that create defensible moats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-now">
+        <div class="container">
+            <h2 class="section-title">Why Now</h2>
+            <p class="section-subtitle">The convergence of institutional blockchain adoption, regulatory clarity, and market inefficiencies creates a unique window for this approach.</p>
+            
+            <div class="pillars">
+                <div class="pillar">
+                    <h3>Capital Efficiency</h3>
+                    <p>Token-based incentives reduce customer acquisition costs while increasing lifetime value—transforming marketing from expense to investment.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h3>Scalable CAC</h3>
+                    <p>Cross-brand network effects allow new acquisitions to benefit from existing customer base, dramatically improving acquisition economics over time.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h3>Regulatory Clarity</h3>
+                    <p>Recent guidance on utility tokens and rewards programs provides clear framework for compliant implementation at institutional scale.</p>
+                </div>
+                
+                <div class="pillar">
+                    <h3>Defensible Moat</h3>
+                    <p>First-mover advantage in building customer loyalty network creates barriers to entry while reducing competitive risk across portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Leadership</h2>
+            <p class="section-subtitle">Experienced operators bringing deep expertise in private equity, corporate finance, and strategic capital formation.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Brian Wilneff</h3>
+                    <p class="role">Founder & CEO</p>
+                    <p>Public company executive with financial services background at thinkorswim and AXA Advisors. Successfully built and exited GamerzArena platform.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h3>William Corbett</h3>
+                    <p class="role">Capital Strategy</p>
+                    <p>Managing Director at Pickwick Capital Partners. 20+ years in alternative investments and technology capital formation.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h3>Rebecca Chance</h3>
+                    <p class="role">Chief Financial Officer</p>
+                    <p>20+ years directing M&A and corporate finance for organizations up to $1B in value. Proven track record in operational efficiency and growth.</p>
+                </div>
+                
+                <div class="team-member">
+                    <h3>Kenneth Null</h3>
+                    <p class="role">Investment Strategy</p>
+                    <p>Founded New Era Assets and BlockSafe Solutions. Successfully raised $100M+ for institutional-grade blockchain initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="investment">
+        <div class="container">
+            <h2 class="section-title">Investment Opportunity</h2>
+            <p>Thryve is currently engaging with qualified institutional investors. Our SAFE + Token Warrant structure provides capital gains tax advantages while enabling participation in both equity appreciation and token economics.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Thryve Protocol. All rights reserved.</p>
+            <p style="font-size: 12px; margin-top: 16px; color: #92B0C8;">This website is provided for informational purposes only and does not constitute an offer to sell or solicitation of an offer to buy securities.</p>
+            <div class="footer-links">
+                <a href="mailto:brian@thryve.network">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
